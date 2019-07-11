@@ -6,6 +6,7 @@ import { PriceComponent } from './price.component';
 import {PriceDashboardComponent} from './price-dashboard/price-dashboard.component';
 import {ControlBarComponent} from './control-bar/control-bar.component';
 import {ControlItemComponent} from './control-item/control-item.component';
+import {HighchartsChartModule} from 'highcharts-angular';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {ControlItemComponent} from './control-item/control-item.component';
   ],
   imports: [
     CommonModule,
-    PriceRoutingModule
+    PriceRoutingModule,
+    HighchartsChartModule
   ]
 })
 export class PriceModule { }

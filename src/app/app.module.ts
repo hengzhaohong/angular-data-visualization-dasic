@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -20,6 +21,7 @@ import { StatusModule } from './status/status.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HighchartsChartModule,
     PriceModule,
     StatusModule,

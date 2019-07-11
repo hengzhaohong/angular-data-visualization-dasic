@@ -1,1 +1,16 @@
-<p>price-dashboard works!</p>
+<div>
+  <highcharts-chart
+    [Highcharts] = "Highcharts"
+
+    [constructorType]="chartConstructor"
+    [options]="chartOptions"
+    [callbackFunction]="chartCallBack"
+
+    [(update)]="updateFlag"
+    [oneToOne]="oneToOneFlag"
+    [runOutsideAngular]="runOutsideAngularFlag"
+
+    [ngStyle]="{'width': '100%', 'display': 'block', 'height': '400px'}"
+  >
+  </highcharts-chart>
+</div>
