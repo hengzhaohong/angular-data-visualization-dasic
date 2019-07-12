@@ -299,56 +299,45 @@ body {
           display: block;
         }
       }
+      div.submenu {
+        padding: 3px 20px 25px 20px;
+        overflow: hidden;
+        background-color: #ffffff;
+        -moz-transition-duration: 0.2s;
+        -webkit-transition-duration: 0.2s;
+        -o-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -moz-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+        -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+        -o-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+        transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+        &.submenuHide {
+          overflow: hidden;
+          max-height: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        &.submenuShow {
+          max-height: 500px;
+        }
+        a {
+          height: 35px;
+          border-top: none;
+          width: 50%;
+          float: left;
+          box-sizing: border-box;
+          cursor: pointer;
+          border-radius: 4px;
+          -webkit-border-radius: 4px;
+          font-size: 14px;
+          color: #6d7879;
+        }
+      }
     }
   }
 }
-
-#omp-sidebar .omp-sidebar-menu > div.submenu {
-  padding: 20px 15px;
-  overflow: hidden;
-  background-color: #ffffff;
-}
-
-#omp-sidebar .omp-sidebar-menu > div.submenuhide {
-  overflow: hidden;
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  -o-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-}
-
-#omp-sidebar .omp-sidebar-menu > div.submenushow {
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  -o-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-  max-height: 500px;
-}
-
-//#omp-sidebar .omp-sidebar-menu > div a {
-//  width: 50%;
-//  float: left;
-//  padding: 6px;
-//  box-sizing: border-box;
-//  cursor: pointer;
-//  border-radius: 4px;
-//  -webkit-border-radius: 4px;
-//  font-size: 14px;
-//  color: #6d7879;
-//}
 
 .menuitem-badge {
   background: #00b09b;  /* fallback for old browsers */

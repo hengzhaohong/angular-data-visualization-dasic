@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import * as Highcharts from 'highcharts';
+import * as Highcharts from 'highcharts/highstock';
 
 /**
  * 产生一个服从指定正态分布的随机数
@@ -23,12 +23,13 @@ function uniform2NormalDistribution() {
 }
 
 /**
- * 循环调用时，生产随机游走序列
+ * 生产随机游走序列
  * @param startWith 初始状态
+ * @param count 序列长度
  */
-const genTestData: (x?: number) => number[] = (startWith = 520) => {
+const genTestData: (startWith?: number, count?: number) => number[] = (startWith = 520, count = 5000) => {
   const testData: number[] = [];
-  for (let i = 0; i < 5000; i++) {
+  for (let i = 0; i < count; i++) {
     if (i === 0) {
       testData.push(startWith);
     } else {
@@ -46,7 +47,7 @@ const genTestData: (x?: number) => number[] = (startWith = 520) => {
 export class PriceDashboardComponent implements OnInit {
   title = 'ompFn';
   Highcharts = Highcharts; // required
-  chartConstructor = 'chart'; // optional string, defaults to 'chart'
+  chartConstructor = 'stockChart'; // optional string, defaults to 'chart'
   chartOptions = {
     title: {
       text: '随机游走的商品价格趋势'
@@ -60,7 +61,7 @@ export class PriceDashboardComponent implements OnInit {
       }
     ],
     credits: {
-      text: '数据来源：随机游走模型模拟'
+      text: '数据来源：模拟的随机游走价格数据'
     }
   }; // required
   updateFlag = false; // optional boolean

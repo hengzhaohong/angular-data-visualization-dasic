@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as Highcharts from 'highcharts';
+import * as Highcharts from 'highcharts/highstock';
 
-const genTestData: (x?: number) => number[] = (startWith = 52) => {
+const genTestData: (startWith?: number, count?: number) => number[] = (startWith = 52, count = 5000) => {
   const testData: number[] = [];
-  for (let i = 0 ; i < 5000; i++) {
+  for (let i = 0 ; i < count; i++) {
     if (i === 0) {
       testData.push(startWith);
     } else {
@@ -22,14 +22,19 @@ const genTestData: (x?: number) => number[] = (startWith = 52) => {
 export class DataStatusDashboardComponent implements OnInit {
   title = 'ompFn';
   Highcharts = Highcharts; // required
-  chartConstructor = 'chart'; // optional string, defaults to 'chart'
+  chartConstructor = 'stockChart'; // optional string, defaults to 'chart'
   chartOptions = {
     title: {
       text: '每日数据量趋势'
     },
     series: [
       {
-        data: genTestData(10)
+        type: 'column',
+        data: genTestData(10, 50)
+      },
+      {
+        type: 'line',
+        data: genTestData(10, 50)
       },
     ],
     credits: {

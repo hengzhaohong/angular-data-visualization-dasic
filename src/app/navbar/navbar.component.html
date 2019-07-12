@@ -24,19 +24,17 @@
     <div class="omp-sidebar-menu">
       <div *ngFor="let menuItem of config">
         <a [id]="menuItem.id" [class.active-menuitem]="menuItem.id == activeMenuId"
-           (click)="activeMenuId = (activeMenuId === menuItem.id ? null : menuItem.id)">
+           [routerLink]="menuItem.link || null"
+           (click)="activeMenuId = (activeMenuId === menuItem.id && menuItem.children.length > 0 ? null : menuItem.id)">
+          <!--<img src="assets/1.svg" class="layout-menu-icon-active"/>
+          <img src="assets/2.svg" class="layout-menu-icon-inactive"/>-->
           <span>{{menuItem.title}}</span>
         </a>
-        <!--<a id="menu_input" #inputmenutitle [class.active-menuitem]="inputmenutitle.id == activeMenuId"
-           (click)="activeMenuId = (activeMenuId === inputmenutitle.id ? null : inputmenutitle.id)">
-          <img src="assets/showcase/images/icons/input-active.svg" class="layout-menu-icon-active"/>
-          <img src="assets/showcase/images/icons/input.svg" class="layout-menu-icon-inactive"/>
-          <span>Input</span>
-        </a>
-        <div
-          [ngClass]="{submenushow: (inputmenutitle.id == activeMenuId), 'submenuhide': (inputmenutitle.id != activeMenuId)}">
-          <a [routerLink]="['/inputgroup']" (click)="menuActive = false">&#9679; InputGroup</a>
-        </div>-->
+        <div *ngIf="menuItem.children.length > 0" class="submenu"
+          [ngClass]="{submenuShow: (menuItem.id == activeMenuId), 'submenuHide': (menuItem.id != activeMenuId)}">
+          <a *ngFor="let submenuItem of menuItem.children"
+             [routerLink]="submenuItem.link" (click)="menuActive = false">&#9679; {{submenuItem.title}}</a>
+        </div>
       </div>
 
     </div>
