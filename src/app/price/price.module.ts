@@ -4,22 +4,18 @@ import { CommonModule } from '@angular/common';
 import { PriceRoutingModule } from './price-routing.module';
 import { PriceComponent } from './price.component';
 import {PriceDashboardComponent} from './price-dashboard/price-dashboard.component';
-import {ControlBarComponent} from './control-bar/control-bar.component';
-import {ControlItemComponent} from './control-item/control-item.component';
-import {HighchartsChartModule} from 'highcharts-angular';
+import {ChartModule} from '../chart/chart.module';
 
 
 @NgModule({
   declarations: [
     PriceComponent,
-    PriceDashboardComponent,
-    ControlBarComponent,
-    ControlItemComponent
+    PriceDashboardComponent
   ],
   imports: [
     CommonModule,
     PriceRoutingModule,
-    HighchartsChartModule
+    ChartModule
   ]
 })
 export class PriceModule { }

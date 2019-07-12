@@ -1,16 +1,13 @@
 <div>
-  <highcharts-chart
-    [Highcharts] = "Highcharts"
+  <app-chart
 
     [constructorType]="chartConstructor"
     [options]="chartOptions"
     [callbackFunction]="chartCallBack"
 
-    [(update)]="updateFlag"
-    [oneToOne]="oneToOneFlag"
-    [runOutsideAngular]="runOutsideAngularFlag"
-
-    [ngStyle]="{'width': '100%', 'display': 'block', 'height': '400px'}"
+    [updateFlag]="updateFlag"
+    [oneToOneFlag]="oneToOneFlag"
+    [runOutsideAngularFlag]="runOutsideAngularFlag"
   >
-  </highcharts-chart>
+  </app-chart>
 </div>
